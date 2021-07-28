@@ -1,0 +1,42 @@
+<div class="buttons-div">
+    <button class="button" (click)="sortByName()">Sort By Name</button>
+    <button class="button" (click)="sortByJoiningDate()">Sort By Joining Date</button>
+    <button class="button" (click)="distinctDepartmentsCount()">Dept Count</button>
+    <button class="button" (click)="experienceMoreThan2()">Experience 2+</button>
+    <button class="button" (click)="removeDeptDev()">Without Development Team</button>
+    <input class="search" [(ngModel)]="searchText" placeholder="search...">
+</div>
+<div>
+    <p *ngIf="clickEvent=='sortByName'">Below table is sorted based on Name (Ascending Order)</p>
+    <p *ngIf="clickEvent=='sortByJoiningDate'">Below table is sorted based on Joining Date (Ascending Order)</p>
+    <p *ngIf="clickEvent=='experienceMoreThan2'">Below table is the result employees wiht more than 2 years of
+        Experience</p>
+    <p *ngIf="clickEvent=='removeDeptDev'">Below table is the result after removal of Development employees</p>
+    <p *ngIf="clickEvent=='distinctDepartmentsCount'">Below table is displays the count of department wise</p>
+</div>
+<div class="main">
+    <table *ngIf="clickEvent!='distinctDepartmentsCount'">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>DEPARTMENT</th>
+            <th>JOINING DATE</th>
+        </tr>
+        <tr *ngFor="let data of displayData | filter : searchText">
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.department}}</td>
+            <td>{{data.joining_date}}</td>
+        </tr>
+    </table>
+    <table *ngIf="clickEvent=='distinctDepartmentsCount'">
+        <tr>
+            <th>DEPARTMENT</th>
+            <th>COUNT</th>
+        </tr>
+        <tr *ngFor="let data of displayData | filter : searchText">
+            <td>{{data.dept}}</td>
+            <td>{{data.count}}</td>
+        </tr>
+    </table>
+</div>

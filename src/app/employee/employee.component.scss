@@ -1,0 +1,61 @@
+.main {
+    display: flex;
+    justify-content: center;
+  }
+  
+  table {
+    max-width: 100%;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #eee;
+  }
+  
+  th {
+    background-color: #555;
+    color: #fff;
+  }
+  
+  th,
+  td {
+    text-align: left;
+    padding: 0.5em 1em;
+  }
+
+  .button {
+    background-color: #dd3a24;
+    border: none;
+    color: white;
+    padding: 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  button:focus {
+      color: black;
+    background: #e5e5e5;
+    outline: none;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+       -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+            box-shadow: inset 0px 0px 5px #c1c1c1;
+  }
+  .buttons-div{
+      display: flex;
+      justify-content: center;
+    margin: 20px;
+  }
+  p{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .search{
+    height: 20px;
+    border: 3px solid #dd3a24;
+    border-radius: 5px;
+    margin: 10px;
+  }
